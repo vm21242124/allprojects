@@ -31,9 +31,7 @@ function Navbar() {
         Menu
       </button>
     </header>
-
-   
-
+    
   </div>
 </div>
   );
