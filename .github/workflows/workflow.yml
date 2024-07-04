@@ -3,7 +3,7 @@ name: "Workflow for Node and react app"
 on:
     push:
         branches:
-            -main
+            - main
 
 jobs:
     Checkout:
@@ -24,7 +24,7 @@ jobs:
               uses: docker/build-push-action@v5
               with:
                 context: .
-                file: ./Dockerfile
+                file: ./portfolio/Dockerfile
                 push: true
                 tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio:latest
             - name: Connect to EC2 instance
