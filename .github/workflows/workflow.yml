@@ -3,7 +3,7 @@ name: "Workflow for Node and react app"
 on:
     push:
         branches:
-            -main
+            - main
 
 jobs:
     Checkout:
