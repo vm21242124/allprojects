@@ -1,0 +1,5 @@
+const doctorSecreteKey="fjslfoiwurerfksfdkljsalkfwruiojflskuoawrklsfksaj";
+const patientSecreteKey="jfdsrweuiosknfslkjowiermnfsjoiwrwnlksnfksjflkasj";
+
+
+module.exports={doctorSecreteKey,patientSecreteKey}
