@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: vinod
+      MYSQL_USER: vinod
+      MYSQL_PASSWORD: vinod
+    ports:
+      - "3306:3306"
+#    volumes:
+#      - mysql-data:/var/lib/mysql
+
+#  springboot-app:
+#    image: db2
+#    container_name: springboot-container
+#    depends_on:
+#      - mysql
+#    ports:
+#      - "8888:8888"
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/vinod
+#      SPRING_DATASOURCE_USERNAME: root
+#      SPRING_DATASOURCE_PASSWORD: root
+#
+#volumes:
+#  mysql-data:

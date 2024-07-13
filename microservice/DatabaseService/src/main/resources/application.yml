@@ -1,0 +1,10 @@
+
+spring:
+  application:
+    name: DB2
+server:
+  port: 8888
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka
