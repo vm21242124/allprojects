@@ -1,0 +1,8 @@
+componentDidMount() //component first time render 
+constructor() //initial super() //bable/transpirel  is used to convert jsx to html // useState we can use to initial in functional
+componentDidUpdated //when the component is re render on some state change // useEffect we can use to implement in functional based
+componentUnMount() // when we remove the component //useEffect return => in functional based
+
+
+NPM is used to install the dependendencies
+NPX is used to create the react app 
