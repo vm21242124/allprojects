@@ -12,6 +12,10 @@ const DoctorQueries = {
   getDoctorByEmail: "SELECT * FROM Doctors WHERE email = '$email'",
   registerDoctor:
     "INSERT INTO Doctors (Name, Age, email, password) VALUES ('$name',$age,'$email','$password')",
+  createDoctorProfile:"INSERT INTO DOCTORPROFILE (Specialization, Degree, DoctorID) VALUES ('$Specialization','$Degree',$DoctorID)",
+  getDoctorProfileById: "SELECT * FROM DOCTORPROFILE WHERE DoctorID = $doctorId",
+  allDoctorProfiles: "SELECT * FROM DOCTORPROFILE",
+  updateDoctorProfileData:"UPDATE DOCTORPROFILE SET Specialization = '$Specialization',  Degree = '$Degree' WHERE DoctorID = $DoctorID"
 };
 
 const getPatientByEmail = async (patientEmail) => {
@@ -63,17 +67,58 @@ const createDoctor = async (doctormodel) => {
       .replace("$email", doctormodel.email)
       .replace("$password", doctormodel.password);
     const data = await pool.query(query);
-    console.log(data);
     return true;
   } else {
     return false;
   }
 };
+const getDoctorProfileById=async(doctorId)=>{
+  const query = DoctorQueries.getDoctorProfileById.replace("$doctorId", doctorId);
+  return await pool.query(query);
+};
+const createDoctorProfileFirstTime =async(Specialization,Degree,DoctorID)=>{
+  const data = await getDoctorProfileById(DoctorID);
+  if(data.rows.length===0){
+    const query = DoctorQueries.createDoctorProfile
+    .replace("$Specialization", Specialization)
+    .replace("$Degree", Degree)
+    .replace("$DoctorID", DoctorID)
+  
+    const data = await pool.query(query);
+    return true;
+  }
+  
+  return false;
+};
+
+const updateDoctorProfileQuery =async(Specialization,Degree,DoctorID)=>{
+
+    const query = DoctorQueries.updateDoctorProfileData
+    .replace("$Specialization", Specialization)
+    .replace("$Degree", Degree)
+    .replace("$DoctorID", DoctorID)
+  
+    return await pool.query(query);
+};
+
+const getAllDoctorsProfiles=async()=>{
+  try {
+    const data=await pool.query(DoctorQueries.allDoctorProfiles);   
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
 module.exports = {
     getPatientByEmail,
     getPatientDetailsById,
     createPatient,
     getDoctorByEmail,
     getDoctorDetailsById,
-    createDoctor 
+    createDoctor,
+    getDoctorProfileById,
+    createDoctorProfileFirstTime,
+    updateDoctorProfileQuery,
+    getAllDoctorsProfiles
 };

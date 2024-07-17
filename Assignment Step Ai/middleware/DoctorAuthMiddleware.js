@@ -1,8 +1,9 @@
 const { doctorSecreteKey } = require("../utils/Constant");
+const getAuthHeader = require("../utils/getAuthHeader");
 const { verifyToken } = require("../utils/Jwt");
 
 const IsLoginDoctor=async(req,res,next)=>{
-   const authorization = req.headers["authorization"];
+   const authorization = getAuthHeader(req);
 
    if(authorization){
        const authToken=authorization?.slice(7);

@@ -1,5 +1,7 @@
 const { getPatientByEmail, createPatient, getPatientDetailsById } = require("../PostgresClient/PostgresClient");
 const { SuccessTemplate, FailureTemplate } = require("../Template/Template");
+const { patientSecreteKey } = require("../utils/Constant");
+const { generateJwtToken } = require("../utils/Jwt");
 
 const registerPatient = async(req,res)=>{
     const {name,age,email,password} =req.body;
@@ -21,6 +23,8 @@ const LoginPatient =async (req,res)=>{
         console.log(password,user.password);
         if(password===user.password){
             delete user.password;
+            const token = generateJwtToken(user,patientSecreteKey);
+            user.token=token;
             return res.json(user).status(200);
         }else{
             return res.json("wrong password").status(200);
@@ -30,8 +34,9 @@ const LoginPatient =async (req,res)=>{
 }
 
 const getPatientById =async(req,res)=>{
-    const userId=req.params.id;
-    const data=await getPatientDetailsById(userId);
+    const { patientId } =req.params;
+
+    const data=await getPatientDetailsById(patientId);
     if(data?.rows?.length>0){
         return res.json(data.rows[0]).status(200);
     }

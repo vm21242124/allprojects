@@ -1,0 +1,4 @@
+start docker compose: docker-compose up
+
+docker database connect syntax:
+docker exec -it postgres psql -U your_db_user -d your_db_name
