@@ -52,6 +52,7 @@ const getDoctorById = async (req, res) => {
   return FailureTemplate(res, "user not exits", false, 404);
 };
 
+
 const createDoctorProfile = async (req, res) => {
   const { doctorId } = req.params;
   const { Specialization, Degree } = req.body;

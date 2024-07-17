@@ -11,4 +11,5 @@ router.post("/login", LoginPatient);
 
 router.get("/:patientId",IsPatientLogin,isAuthorizePatient,getPatientById);
 
+
 module.exports= router;
