@@ -1,19 +1,20 @@
-const SuccessTemplate=(res,message,success,statuscode)=>{
+const SuccessTemplate=(res,message,success,statuscode,data)=>{
     const temp={
         message,
-        success
+        success,
+        data
     }
 
-    return res.json(temp).status(statuscode);
+    return res.status(statuscode).json(temp);
 }
 
-const FailureTemplate=(res,message,success,statuscode)=>{
-    const temp={
+const FailureTemplate = (res, message, success, statuscode) => {
+    const temp = {
         message,
         success
-    }
+    };
 
-    return res.json(temp).status(statuscode);
+    return res.status(statuscode).json(temp);
 }
 
 module.exports={SuccessTemplate,FailureTemplate}

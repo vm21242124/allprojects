@@ -9,7 +9,7 @@ const registerPatient = async(req,res)=>{
     const response=await createPatient(PatientModel);
 
     if(response){
-      return SuccessTemplate(res,"successfully created user",true,200)
+      return SuccessTemplate(res,"successfully created user",true,200,response.rows)
     }
     return FailureTemplate(res, "user already exits",false,401);
 }

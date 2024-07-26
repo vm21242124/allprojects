@@ -16,4 +16,4 @@ export const ProblemsContainer = styled.div`
     padding: 1rem;
     font-size: 1rem;
     background-color: #454646;
-`; 
+`;

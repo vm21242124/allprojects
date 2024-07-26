@@ -11,18 +11,20 @@ const {
   doctorSecreteKey,
   doctorSpecialization,
   doctorDegree,
+  ROLES,
 } = require("../utils/Constant");
-const { generateJwtToken } = require("../utils/Jwt");
+const { generateJwtToken, addCookie } = require("../utils/Jwt");
 
 const registerDoctor = async (req, res) => {
   const { name, age, email, password } = req.body;
   const doctormodel = { name, age, email, password };
   const response = await createDoctor(doctormodel);
 
-  if (response) {
-    return SuccessTemplate(res, "successfully created user", true, 200);
+  if (!response) {
+    return FailureTemplate(res, "user already exits", false, 403);
   }
-  return FailureTemplate(res, "user already exits", false, 401);
+  console.log(response);
+  return SuccessTemplate(res, "successfully created user", true, 200,response.rows[0]);
 };
 
 const LoginDoctor = async (req, res) => {
@@ -33,14 +35,24 @@ const LoginDoctor = async (req, res) => {
     const user = data.rows[0];
     if (password === user.password) {
       delete user.password;
-      const token = generateJwtToken(user, doctorSecreteKey);
-      user.token = token;
-      return res.json(user).status(200);
+      console.log(user);
+      const token = generateJwtToken(user.doctorid, doctorSecreteKey,ROLES.DOCTOR);
+
+
+      const cookieOptions = {
+        // httpOnly: true,
+        sameSite: 'Lax', // Adjust as needed for your use case
+        maxAge:  72 * 60 * 60 * 1000, // 1 day
+      };
+
+
+     res.cookie('auth-token', token, cookieOptions);
+      return res.status(200).json(user);
     } else {
-      return res.json("wrong password").status(200);
+      return res.status(404).json("wrong password");
     }
   }
-  return res.json("user not register").status(401);
+  return res.json("user not register").status(403);
 };
 
 const getDoctorById = async (req, res) => {

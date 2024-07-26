@@ -11,7 +11,7 @@ const DoctorQueries = {
   getDoctorById: "SELECT * FROM Doctors WHERE DoctorID = $doctorId",
   getDoctorByEmail: "SELECT * FROM Doctors WHERE email = '$email'",
   registerDoctor:
-    "INSERT INTO Doctors (Name, Age, email, password) VALUES ('$name',$age,'$email','$password')",
+    "INSERT INTO Doctors (Name, Age, email, password) VALUES ('$name',$age,'$email','$password') RETURNING *",
   createDoctorProfile:"INSERT INTO DOCTORPROFILE (Specialization, Degree, DoctorID) VALUES ('$Specialization','$Degree',$DoctorID)",
   getDoctorProfileById: "SELECT * FROM DOCTORPROFILE WHERE DoctorID = $doctorId",
   allDoctorProfiles: "SELECT * FROM DOCTORPROFILE",
@@ -67,7 +67,7 @@ const createDoctor = async (doctormodel) => {
       .replace("$email", doctormodel.email)
       .replace("$password", doctormodel.password);
     const data = await pool.query(query);
-    return true;
+    return data;
   } else {
     return false;
   }

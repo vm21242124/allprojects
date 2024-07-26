@@ -1,8 +1,12 @@
 const jwt=require('jsonwebtoken')
 
 
-const generateJwtToken=(payload,secreteKey)=>{
-    return jwt.sign(payload,secreteKey,{expiresIn:'1d'});
+const generateJwtToken=(userId,secreteKey,role)=>{
+    const payload={
+        userId,
+        role
+    }
+    return jwt.sign(payload,secreteKey,{expiresIn:'3d'});
 }
 
 const verifyToken = async (token,secreteKey) => {
@@ -16,4 +20,7 @@ const verifyToken = async (token,secreteKey) => {
 const decodeToken=(token)=>{
     return jwt.decode(token);
 }
-module.exports={generateJwtToken,verifyToken,decodeToken};
+const addCookie=(res,token)=>{
+   
+};
+module.exports={generateJwtToken,verifyToken,decodeToken,addCookie};
