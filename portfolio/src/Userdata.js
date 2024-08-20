@@ -68,6 +68,32 @@ export const userData={
        {
             name:'AWS'
        }
+    ],
+    testimonials : [
+        {
+            name: "Akshay Deole",
+            title: "Senior Executive at BBD",
+            image: "https://dummyimage.com/106x106",
+            quote: "I have had the pleasure of working with Vinod, a passionate software engineer who consistently goes above and beyond to deliver high-quality work. His dedication to his craft is evident in the way he tackles complex challenges and diligently completes every task he takes on. Vinod's ability to quickly learn new technologies and concepts is impressive, and his curiosity drives him to constantly expand his skill set.\n One of Vinod's standout qualities is his openness to feedback. He listens attentively and seamlessly integrates suggestions into his work, continuously improving and refining his skills. Beyond his technical abilities, Vinod is a humble and down-to-earth individual. He communicates effectively, ensuring that everyone on the team is on the same page.\n Working with Vinod has been a truly rewarding experience. His combination of technical prowess, curiosity, humility\nmakes him an invaluable asset to any team. I highly recommend Vinod for any opportunity that comes his way.",
+        },
+        {
+            name: "Benedict Dube",
+            title: "Software Engineer at BBD",
+            image: "https://dummyimage.com/107x107",
+            quote: "Vinod is a passionate software engineer who often goes to great lengths to deliver tickets. He is also a fast learner and a curious person who has a skill for listening and adapting feedback into his work. He is also a humble person, a good communicator and a time conscious developer, making him a wonderful teammate to work with.",
+        },
+        {
+            name: "Arthur Sibanyoni",
+            title: "Scrum Master at Vodacom",
+            image: "https://dummyimage.com/108x108",
+            quote: "Vinod is an exception developer and goes an extra mile to reach his goals. He's committed, willing to learn and a Team player. I recommend him to any Team.\n Continue being exceptional Vinod…",
+        },
+        {
+            name: "Krunal Parmar",
+            title: "Tech Lead at BBD",
+            image: "https://dummyimage.com/107x107",
+            quote: "Vinod is a passionate software engineer who often goes to great lengths to deliver tickets. He is also a fast learner and a curious person who has a skill for listening and adapting feedback into his work. He is also a humble person, a good communicator and a time conscious developer, making him a wonderful teammate to work with.",
+        },
     ]
 };
 
