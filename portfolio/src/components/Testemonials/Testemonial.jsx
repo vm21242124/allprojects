@@ -16,7 +16,7 @@ function TestimonialCarousel() {
                 setTimeout(() => {
                     setCurrentIndex((prevIndex) => (prevIndex + 2) % userData.testimonials.length);
                     setFade(true);
-                }, 1000); // duration of fade-out animation
+                }, 1000);
             }, 3000);
             return () => clearInterval(interval);
         }

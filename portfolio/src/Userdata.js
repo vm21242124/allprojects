@@ -8,7 +8,7 @@ export const userData={
     jobTitle:'Software Engineer Intern',
     ResumeUrl:'https://drive.google.com/file/d/1Kwy7AQNIBmXORa0FwlyPw4WKVeFJzuLv/view?usp=sharing',
     mailto:'vinodrmali01@gmail.com',
-    profileSummery:'Developer who knows how to build things',
+    profileSummery:'I am developer who know build things and make them quality product',
     linkdIn:'https://www.linkedin.com/in/vinodmali01/',
     github:'https://github.com/vm21242124',
     projects:[
