@@ -100,3 +100,23 @@ export const userData={
 export const openInNewTab=(link)=>{
     window.open(link, "_blank", "noopener,noreferrer");
 };
+export const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vinod Mali",
+    "jobTitle": "Software Engineer Intern",
+    "url": "https://yourportfolio.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/vinodmali01/",
+      "https://github.com/vm21242124"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "BBD Software"
+    },
+    "knowsAbout": ["React", "Node", "JavaScript", "Microservices", "AWS"],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Your University"
+    }
+  };
