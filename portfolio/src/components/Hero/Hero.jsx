@@ -17,7 +17,7 @@ const Hero = () => {
         const subject = encodeURIComponent('Ready to Hire');
         const body = encodeURIComponent(`Hi ${userData.name},\n Hope you are doing well, we wan't hire you. \n Thanks`);
       
-        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:${userData.mailto}?subject=${subject}&body=${body}`;
     };
 
   return (

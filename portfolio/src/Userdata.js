@@ -6,9 +6,9 @@ export const userData={
     companyName:'BBD Software',
     LeftsideItems:['About Me','Projects','Skills','Contact'],
     jobTitle:'Software Engineer Intern',
-    ResumeUrl:'https://drive.google.com/file/d/1YPVcGS5xJyfsrOtNmU6M2k3kJraoE_1o/view?usp=drivesdk',
-    mailto:'',
-    profileSummery:'Passionate and Creative Fullstack Developer with Expertise in IT Systems and Applications | Committed to Quality Code and Modern Best Practices | Collaborative Team Player and Independent Worker | Proven Track Record in Meeting Delivery Timelines | Analysis, design, development, testing, troubleshooting',
+    ResumeUrl:'https://drive.google.com/file/d/1Kwy7AQNIBmXORa0FwlyPw4WKVeFJzuLv/view?usp=sharing',
+    mailto:'vinodrmali01@gmail.com',
+    profileSummery:'Developer who knows how to build things',
     linkdIn:'https://www.linkedin.com/in/vinodmali01/',
     github:'https://github.com/vm21242124',
     projects:[

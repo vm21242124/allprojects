@@ -28,7 +28,7 @@ const Projects = () => {
           <p className="text-gray-500">{item.desc}</p>
 
           <div>
-            <span href="#" className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700" onClick={()=>openInNewTab(item.link)}>Read more</span>
+            <span href="#" className="font-semibold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700 cursor-pointer" onClick={()=>openInNewTab(item.link)}>Read more</span>
           </div>
         </div>
       </div>
